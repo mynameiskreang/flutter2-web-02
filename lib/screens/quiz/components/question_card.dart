@@ -6,7 +6,10 @@ import 'package:flutter_web_02/screens/quiz/components/option.dart';
 class QuestionCard extends StatelessWidget {
   const QuestionCard({
     Key? key,
+    required this.question,
   }) : super(key: key);
+
+  final Question question;
 
   @override
   Widget build(BuildContext context) {
