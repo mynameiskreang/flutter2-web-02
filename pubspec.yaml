@@ -24,7 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  websafe_svg: ^2.0.0
+  flutter_svg: ^0.22.0
   get: ^4.1.4
 
 

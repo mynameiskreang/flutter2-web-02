@@ -43,13 +43,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.15.0"
-  convert:
-    dependency: transitive
-    description:
-      name: convert
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.0.0"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -70,12 +63,12 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_svg:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_svg
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.21.0+1"
+    version: "0.22.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -88,27 +81,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.1.4"
-  http:
-    dependency: transitive
-    description:
-      name: http
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.13.3"
-  http_parser:
-    dependency: transitive
-    description:
-      name: http_parser
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.0.0"
-  logging:
-    dependency: transitive
-    description:
-      name: logging
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.1"
   matcher:
     dependency: transitive
     description:
@@ -144,13 +116,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.1"
-  pedantic:
-    dependency: transitive
-    description:
-      name: pedantic
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.11.0"
   petitparser:
     dependency: transitive
     description:
@@ -219,13 +184,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
-  websafe_svg:
-    dependency: "direct main"
-    description:
-      name: websafe_svg
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.0"
   xml:
     dependency: transitive
     description:
@@ -235,4 +193,4 @@ packages:
     version: "5.1.1"
 sdks:
   dart: ">=2.12.0 <3.0.0"
-  flutter: ">=2.0.0"
+  flutter: ">=1.24.0-7.0"
