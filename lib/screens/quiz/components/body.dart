@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_web_02/constants.dart';
+import 'package:flutter_web_02/screens/quiz/components/progress_bar.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -19,28 +20,7 @@ class Body extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
             child: Column(
-              children: [
-                Container(
-                  width: double.infinity,
-                  height: 35,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.white, width: 3),
-                      borderRadius: BorderRadius.circular(50)),
-                  child: Stack(
-                    children: [
-                      // Layout Builder ทำให้ควบคุม space ของ
-                      // constraints.maxWidth เพื่อใช้ทำ animation
-                      LayoutBuilder(
-                          builder: (context, constraints) => Container(
-                                width: constraints.maxWidth * 0.25,
-                                decoration: BoxDecoration(
-                                    gradient: kPrimaryGradient,
-                                    borderRadius: BorderRadius.circular(50)),
-                              ))
-                    ],
-                  ),
-                )
-              ],
+              children: [ProgressBar()],
             ),
           ),
         )
