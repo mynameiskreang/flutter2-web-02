@@ -1,4 +1,5 @@
 import 'package:flutter/animation.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_web_02/models/questions.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +14,10 @@ class QuestionController extends GetxController
   late AnimationController _animationController;
   late Animation _animation;
 
+  late PageController _pageController;
+
+  PageController get pageController => this._pageController;
+
   List<Question> _questions = sample_data
       .map((question) => Question(
           id: question['id'],
@@ -24,21 +29,26 @@ class QuestionController extends GetxController
   List<Question> get questions => this._questions;
 
   bool _isAnswered = false;
+
   bool get isAnswered => this._isAnswered;
 
   int _correctAns = 0;
+
   int get correctAns => this._correctAns;
 
   int _selectAns = 0;
+
   int get selectedAns => this._selectAns;
 
   // RxInt เป็น type ของ package get
   // https://pub.dev/packages/get
   // obs คือ make any variable observable
   RxInt _questionNumber = 1.obs;
+
   RxInt get questionNumber => this._questionNumber;
 
   int _numOfCorrectAns = 0;
+
   int get numbOfCorrectAns => this._numOfCorrectAns;
 
   // บรรทัด 12 ทำให access animation
@@ -55,9 +65,16 @@ class QuestionController extends GetxController
       });
 
     // Start our animation
-    _animationController.forward();
-
+    _animationController.forward().whenComplete(() => nextQuestion());
+    _pageController = PageController();
     super.onInit();
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
+    _animationController.dispose();
+    _pageController.dispose();
   }
 
   void checkAns(Question question, int selectedIndex) {
@@ -68,7 +85,25 @@ class QuestionController extends GetxController
     if (_correctAns == _selectAns) _numOfCorrectAns++;
 
     _animationController.stop();
-
     update();
+
+    Future.delayed(Duration(seconds: 3), () {
+      nextQuestion();
+    });
+  }
+
+  void nextQuestion() {
+    if (_questionNumber.value != _questions.length) {
+      _isAnswered = false;
+      _pageController.nextPage(
+          duration: Duration(microseconds: 250), curve: Curves.ease);
+
+      _animationController.reset();
+      _animationController.forward().whenComplete(() => nextQuestion());
+    }
+  }
+
+  void updateTheQnNum(int index) {
+    _questionNumber.value = index + 1;
   }
 }
