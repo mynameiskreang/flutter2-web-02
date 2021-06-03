@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_web_02/constants.dart';
+import 'package:flutter_web_02/controllers/question_controller.dart';
 import 'package:flutter_web_02/screens/quiz/components/progress_bar.dart';
 import 'package:flutter_web_02/screens/quiz/components/question_card.dart';
+import 'package:get/get.dart';
 
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    QuestionController _questionController = Get.put(QuestionController());
     Size size = MediaQuery.of(context).size;
     return Stack(
       children: [
@@ -54,7 +57,10 @@ class Body extends StatelessWidget {
               ),
               Expanded(
                   child: PageView.builder(
-                      itemBuilder: (context, index) => QuestionCard())),
+                      itemCount: _questionController.questions.length,
+                      itemBuilder: (context, index) => QuestionCard(
+                            question: _questionController.questions[index],
+                          ))),
             ],
           ),
         )

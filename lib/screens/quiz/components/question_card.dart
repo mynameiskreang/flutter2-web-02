@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_02/constants.dart';
+import 'package:flutter_web_02/controllers/question_controller.dart';
 import 'package:flutter_web_02/models/questions.dart';
 import 'package:flutter_web_02/screens/quiz/components/option.dart';
+import 'package:get/get.dart';
 
 class QuestionCard extends StatelessWidget {
   const QuestionCard({
@@ -13,6 +15,7 @@ class QuestionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    QuestionController _controller = Get.put(QuestionController());
     return Container(
       margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
       padding: EdgeInsets.all(kDefaultPadding),
@@ -20,7 +23,7 @@ class QuestionCard extends StatelessWidget {
           color: Colors.white, borderRadius: BorderRadius.circular(25)),
       child: Column(
         children: [
-          Text(sample_data[0]['question'],
+          Text(question.question,
               // style: TextStyle(color: kBlackColor),
               style: Theme.of(context)
                   .textTheme
@@ -30,9 +33,16 @@ class QuestionCard extends StatelessWidget {
           SizedBox(
             height: kDefaultPadding / 2,
           ),
-          Option(),
-          Option(),
-          Option()
+          ...List.generate(
+              question.options.length,
+              (index) => Option(
+                  text: question.options[index],
+                  index: index,
+                  press: () {
+                    print(question.options[index]);
+                    print(question);
+                    _controller.checkAns(question, index);
+                  }))
         ],
       ),
     );

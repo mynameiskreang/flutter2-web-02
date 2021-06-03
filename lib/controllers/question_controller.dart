@@ -23,6 +23,24 @@ class QuestionController extends GetxController
 
   List<Question> get questions => this._questions;
 
+  bool _isAnswered = false;
+  bool get isAnswered => this._isAnswered;
+
+  int _correctAns = 0;
+  int get correctAns => this._correctAns;
+
+  int _selectAns = 0;
+  int get selectedAns => this._selectAns;
+
+  // RxInt เป็น type ของ package get
+  // https://pub.dev/packages/get
+  // obs คือ make any variable observable
+  RxInt _questionNumber = 1.obs;
+  RxInt get questionNumber => this._questionNumber;
+
+  int _numOfCorrectAns = 0;
+  int get numbOfCorrectAns => this._numOfCorrectAns;
+
   // บรรทัด 12 ทำให access animation
   Animation get animation => this._animation;
 
@@ -40,5 +58,17 @@ class QuestionController extends GetxController
     _animationController.forward();
 
     super.onInit();
+  }
+
+  void checkAns(Question question, int selectedIndex) {
+    _isAnswered = true;
+    _correctAns = question.answer;
+    _selectAns = selectedIndex;
+
+    if (_correctAns == _selectAns) _numOfCorrectAns++;
+
+    _animationController.stop();
+
+    update();
   }
 }
