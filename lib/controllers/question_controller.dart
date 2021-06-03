@@ -1,6 +1,6 @@
-import 'package:flutter/animation.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_web_02/models/questions.dart';
+import 'package:flutter_web_02/screens/score/score_screen.dart';
 import 'package:get/get.dart';
 
 // ใช้สำหรับจัดการ state
@@ -100,6 +100,8 @@ class QuestionController extends GetxController
 
       _animationController.reset();
       _animationController.forward().whenComplete(() => nextQuestion());
+    } else {
+      Get.to(ScoreScreen());
     }
   }
 

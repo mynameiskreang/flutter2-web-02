@@ -12,6 +12,7 @@ class Body extends StatelessWidget {
     QuestionController _questionController = Get.put(QuestionController());
     Size size = MediaQuery.of(context).size;
     return Stack(
+      fit: StackFit.expand,
       children: [
         SvgPicture.asset(
           'assets/icons/bg.svg',

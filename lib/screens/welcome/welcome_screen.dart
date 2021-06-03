@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_web_02/constants.dart';
+import 'package:flutter_web_02/screens/quiz/quiz_screen.dart';
+import 'package:get/get.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Stack(children: <Widget>[
+      body: Stack(fit: StackFit.expand, children: <Widget>[
         SvgPicture.asset(
           'assets/icons/bg.svg',
           fit: BoxFit.fill,
@@ -41,7 +43,7 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                       Spacer(),
                       InkWell(
-                        onTap: () {},
+                        onTap: () => Get.to(QuizScreen()),
                         child: Container(
                           alignment: Alignment.center,
                           padding: EdgeInsets.all(kDefaultPadding * 0.75),
