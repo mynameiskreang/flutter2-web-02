@@ -25,22 +25,38 @@ class ScoreScreen extends StatelessWidget {
         Column(
           children: [
             Spacer(),
-            Text("Score",
+            Text(
+                "Score ${_qnController.numbOfCorrectAns * 10}/${_qnController.questions.length * 10}",
                 style: Theme.of(context)
                     .textTheme
                     .headline3!
                     .copyWith(color: kSecondaryColor)),
             Spacer(),
             Text(
-                '${_qnController.correctAns * 10}/${_qnController.questions.length * 10}',
-                style: Theme.of(context)
-                    .textTheme
-                    .headline3!
-                    .copyWith(color: kSecondaryColor)),
+              checkScore(_qnController.numbOfCorrectAns * 10,
+                  _qnController.questions.length * 10),
+              textAlign: TextAlign.center,
+              textScaleFactor: 2,
+            ),
+            Spacer(),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              child: Image.network(
+                'https://media.giphy.com/media/8FUmlOoL72HB3rR7wm/giphy.gif',
+              ),
+            ),
             Spacer(flex: 3),
           ],
         )
       ],
     ));
+  }
+
+  checkScore(numbOfCorrectAns, questionsLength) {
+    if (numbOfCorrectAns == questionsLength) {
+      return 'คุณผ่านแหละ! ยินดีด้วยจริงๆ!';
+    } else {
+      return 'คุณไม่ผ่านนะ! \n我要让你们去外国家。';
+    }
   }
 }
