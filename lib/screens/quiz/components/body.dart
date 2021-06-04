@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter2_02/constants.dart';
-import 'package:flutter2_02/controllers/question_controller.dart';
-import 'package:flutter2_02/screens/quiz/components/progress_bar.dart';
-import 'package:flutter2_02/screens/quiz/components/question_card.dart';
+import 'package:flutter2_web_02/constants.dart';
+import 'package:flutter2_web_02/controllers/question_controller.dart';
+import 'package:flutter2_web_02/screens/quiz/components/progress_bar.dart';
+import 'package:flutter2_web_02/screens/quiz/components/question_card.dart';
 import 'package:get/get.dart';
 
 class Body extends StatelessWidget {

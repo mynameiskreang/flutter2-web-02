@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter2_02/models/questions.dart';
-import 'package:flutter2_02/screens/score/score_screen.dart';
+import 'package:flutter2_web_02/models/questions.dart';
+import 'package:flutter2_web_02/screens/score/score_screen.dart';
 import 'package:get/get.dart';
 
 // ใช้สำหรับจัดการ state

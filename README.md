@@ -1,4 +1,4 @@
-# flutter2_02
+# flutter2_web_02
 
 A new Flutter project.
 

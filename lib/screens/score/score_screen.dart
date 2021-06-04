@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter2_02/constants.dart';
-import 'package:flutter2_02/controllers/question_controller.dart';
+import 'package:flutter2_web_02/constants.dart';
+import 'package:flutter2_web_02/controllers/question_controller.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 

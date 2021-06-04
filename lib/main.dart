@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter2_02/screens/welcome/welcome_screen.dart';
+import 'package:flutter2_web_02/screens/welcome/welcome_screen.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {

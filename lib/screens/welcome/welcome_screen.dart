@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter2_02/constants.dart';
-import 'package:flutter2_02/screens/quiz/quiz_screen.dart';
+import 'package:flutter2_web_02/constants.dart';
+import 'package:flutter2_web_02/screens/quiz/quiz_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
