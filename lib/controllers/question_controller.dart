@@ -87,7 +87,7 @@ class QuestionController extends GetxController
     _animationController.stop();
     update();
 
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 1), () {
       nextQuestion();
     });
   }
@@ -96,7 +96,7 @@ class QuestionController extends GetxController
     if (_questionNumber.value != _questions.length) {
       _isAnswered = false;
       _pageController.nextPage(
-          duration: Duration(microseconds: 250), curve: Curves.ease);
+          duration: Duration(microseconds: 100), curve: Curves.ease);
 
       _animationController.reset();
       _animationController.forward().whenComplete(() => nextQuestion());

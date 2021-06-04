@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_web_02/constants.dart';
 import 'package:flutter_web_02/controllers/question_controller.dart';
 import 'package:flutter_web_02/screens/quiz/components/progress_bar.dart';
@@ -14,13 +13,13 @@ class Body extends StatelessWidget {
     return Stack(
       fit: StackFit.expand,
       children: [
-        SvgPicture.asset(
-          'assets/icons/bg.svg',
-          fit: BoxFit.fill,
-          alignment: Alignment.center,
-          width: size.width,
-          height: size.height,
-        ),
+        // SvgPicture.asset(
+        //   'assets/icons/bg.svg',
+        //   fit: BoxFit.fill,
+        //   alignment: Alignment.center,
+        //   width: size.width,
+        //   height: size.height,
+        // ),
         SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
